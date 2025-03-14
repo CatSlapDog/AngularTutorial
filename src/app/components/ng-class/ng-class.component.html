@@ -1,0 +1,46 @@
+<div class="row">
+    <div class="col-3 p-3" [ngClass]="divBgColor">
+        Div 1
+    </div>
+    <div class="col-3" 
+    [ngClass]="isChecked == true ? 'bg-success' : 'bg-danger'">
+    <!--"true ?" means if this condition is true 
+    bg-success(green color) will be add 
+    if not 
+    bg-danger(red color) will be add-->
+        Div 2
+    </div>
+    <div class="col-3 p-3" [ngClass]="div3ClassName">
+        Div 3
+    </div>
+    <div [class]="divBgColor">
+        Div 4
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-3">
+        <button class="btn btn-success"
+        (click)="addDiv1Color('bg-success')">Add Green</button>
+
+        <button class="btn btn-danger"
+        (click)="addDiv1Color('bg-danger')">Add Danger</button>
+
+    </div>
+    <div class="col-3">
+        <input type="checkbox" [(ngModel)]="isChecked" > 
+        {{isChecked}}
+        <!--ngModel use with textbox or checkbox 
+        and need () cover it in [] & imports FormsModule to use
+        the () listen for user changes & updates it's two-way binding 
+        the [] binds the value from component (isChecked) it's one-way binding
+        When input has value ngModel will be "true" & trigger isChecked 
+        so the {{}} will display "true"-->
+    </div>
+
+    <div class="col-3">
+        <input type="text" [(ngModel)]="div3ClassName" >
+        <!--type class name in text field 
+        and the Div 3 bg will change follows it-->
+    </div>
+</div>
