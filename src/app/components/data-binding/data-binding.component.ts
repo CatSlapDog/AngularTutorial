@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -20,13 +21,19 @@ export class DataBindingComponent {
   selectedCity: string = "";
 
 
-  constructor() {
+  constructor(private router: Router) { 
+    // private router: Router means create instance of router service for injecting it into component
     console.log(this.firstName);
 
     this.isActive = false;
     console.log(this.isActive);
     //this.showWelcomeMessage()
 }
+
+navigateToAdmin(){
+  this.router.navigateByUrl("/admin")
+}
+// use routerLink to navigate to another component by syntax in ts
 
 showWelcomeMessage() {
   alert("Welcome to Angular Tutorial");

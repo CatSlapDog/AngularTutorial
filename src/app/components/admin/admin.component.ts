@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
-import { RouteConfigLoadEnd, RouterOutlet } from '@angular/router';
+import { RouteConfigLoadEnd, RouterLink, RouterOutlet } from '@angular/router';
 import { UserComponent } from '../user/user.component';
 
 
 @Component({
   selector: 'app-admin',
-  imports: [AdminComponent,UserComponent],
+  imports: [AdminComponent,UserComponent,RouterLink],
   templateUrl: './admin.component.html',
   styleUrl: './admin.component.css'
 })

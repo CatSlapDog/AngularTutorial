@@ -1,0 +1,20 @@
+
+<p>
+    {{firstName()}} 
+    <!-- access the signal as a method by put() to get only value -->
+     <!-- if not it will show "Signal: <firstName>"" on site -->
+</p>
+
+<p>
+    <input type="text" [value]="lastName()">
+</p>
+
+<p>
+    {{courseName}}
+</p>
+
+<p>{{rollNo()}}</p>
+
+<button (click)="onIncrement()" class="btn btn-success">
+    Increment
+</button>
